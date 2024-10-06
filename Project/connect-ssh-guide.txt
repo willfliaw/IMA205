@@ -1,0 +1,15 @@
+Connect
+ssh <USERNAME>@ssh.enst.fr
+
+Copy files
+scp -r ./challenge <USERNAME>@gpu<NUMBER>:~/challenge
+
+Login:
+ssh <USERNAME>@gpu<NUMBER>.enst.fr
+
+Installing conda and cuda-pytorch:
+curl -O https://repo.anaconda.com/archive/Anaconda3-2024.02-1-Linux-x86_64.sh
+bash Anaconda3-2024.02-1-Linux-x86_64.sh
+export PATH="./anaconda3/bin:$PATH"
+source ~/.bashrc
+conda create -n ml-torch python matplotlib numpy scipy scikit-image ipykernel pandas scikit-learn seaborn jupyter tqdm pytorch pytorch-cuda=12.1 torchvision -c pytorch -c nvidia
